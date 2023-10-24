@@ -20,10 +20,10 @@
                @foreach ($data as $estu)
                <tr>
                   <td>{{ $estu->id }}</td>
-                  <td>{{ $estu->nombre }}</td>
-                  <td>{{ $estu->cui }}</td>
-                  <td>{{$estu->gnombre}} / SECCION: {{$estu->seccion}}</td>
-                  <td>{{$estu->created_at}}</td>
+                  <td>{{ $estu->estudiante->nombre }}</td>
+                  <td>{{ $estu->estudiante->cui }}</td>
+                  <td>{{$estu->grado->nombre}} / SECCION: {{$estu->grado->seccion}}</td>
+                  <td>{{$estu->estudiante->created_at}}</td>
                   
                </tr>
                @endforeach

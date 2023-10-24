@@ -209,13 +209,7 @@ class EstudienteController extends Controller
     // retorna el reporte de toso los estudientes inscritos
     public function estudianteAllReport()
     {
-        $data = DB::table('inscripcions as in')
-            ->join('estudiantes as est', 'in.estudiante_id', '=', 'est.id')
-            ->join('grados as g', 'in.grado_id', '=', 'g.id')
-            ->select('est.nombre', 'est.cui', 'g.nombre as gnombre', 'g.seccion', 'in.created_at', 'in.id')
-            ->orderBy('est.nombre', 'asc')
-            ->get();
-
+        $data = Inscripcion::all();
         // dd();
 
         return view('admin.estudiente.reportes.all', compact('data'));
@@ -224,12 +218,7 @@ class EstudienteController extends Controller
     // retorna el reporte de toso los estudientes inscritos por grado
     public function estudianteAllReportToGrado(Request $request)
     {
-        $data = DB::table('inscripcions as in')
-            ->join('estudiantes as est', 'in.estudiante_id', '=', 'est.id')
-            ->join('grados as g', 'in.grado_id', '=', 'g.id')
-            ->select('est.nombre', 'est.cui', 'g.nombre as gnombre', 'g.seccion', 'in.created_at', 'in.id')
-            ->orderBy('est.nombre', 'asc')
-            ->where('g.id', $request->grado_id)
+        $data = Inscripcion::where('grado_id', $request->grado_id)
             ->get();
 
         // dd($request->grado_id);
