@@ -4,6 +4,7 @@
 <div class="container-fluid">
    <div class="row">
       <div class="col">
+         <p class="text-center">REPORTE DE PROFESORES</p>
          <table class="table">
             <thead>
                <tr>

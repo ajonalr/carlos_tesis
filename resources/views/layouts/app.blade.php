@@ -23,7 +23,7 @@
 <![endif]-->
 
     <style>
-        body { 
+        body {
             background-color: #ffff;
         }
     </style>
@@ -34,7 +34,18 @@
 <body>
 
 
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img src="{{asset('logos/logo.png')}}" style="width: 20%;" alt="">
+            </div>
+        </div>
+    </div>
+
+
     <div class="container-fluid d-flex align-items-center">
+
+
 
         @include('partial.includes.alerts')
         @yield('content')
